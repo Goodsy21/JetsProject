@@ -1,0 +1,5 @@
+Spy,U-2 "Dragon Lady",475.0,6090.0,Classified
+Fighter,F-15E "Strike Eagle",1650.0,2400.0,108200000
+Private,Gulfstream G-IV,561.1,4856.02,32000000
+Fighter,A-10 "Thunderbolt,439.0.,2240.0,46300000
+Passenger,747-8,564.21,8898.04,418400000
