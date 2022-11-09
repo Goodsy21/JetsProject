@@ -7,17 +7,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Airfield {
-	ArrayList<String> fleet;
-	List<String> allPlanes = reader();
-	private ArrayList<ArrayList<String>> createAirfield() {
-		ArrayList<ArrayList<String>> airfield = new ArrayList<>();
-		for (int i = 0; i <= airfield.size(); i++) {
-			airfield.add(new ArrayList<>());
-		}
-		System.out.println(airfield.toString());
-		return airfield;
+	ArrayList<Jet> fleet = new ArrayList<Jet>();
+	
+	
+	
+	public void setFleet(ArrayList<Jet> fleet) {
+		this.fleet = fleet;
 	}
-	private ArrayList<String> reader() {
+
+	public ArrayList<Jet> getFleet() {
+		return fleet;
+	}
+
+	List<String> allPlanes = reader();
+
+		ArrayList<String> reader() {
 		BufferedReader br = null;
 		ArrayList<String> airfield = new ArrayList<>();
 
@@ -31,7 +35,7 @@ public class Airfield {
 		} catch (IOException e) {
 			System.err.println(e);
 		}
-		return fleet;
+		return airfield;
 	}
-	
+
 }

@@ -3,78 +3,105 @@ package com.skilldistillery.jets.entities;
 import java.util.Objects;
 
 public abstract class Jet {
+	private String type;
 	private String model;
 	private Double maxMPH;
 	private Double range;
 	private Double price;
-	private String getModel() {
+
+//	public void fastestJet() {
+//        double fastest = 0;
+//        for (Jet jet : jets) {
+//            fastest = Math.max(fastest, jet.maxMPH());
+//        }
+//        System.out.println("The fastest jet(s) are listed below:");
+//        System.out.println(fastest);
+//        for (Jet jet2 : jets) {
+//            if (jet2.maxMPH() >= fastest) {
+//                System.out.println(jet2);
+//                fastest();
+//            }
+//        }
+//    } 
+	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getModel() {
 		return model;
 	}
-	private void setModel(String model) {
+
+	public void setModel(String model) {
 		this.model = model;
 	}
-	private Double getMaxMPH() {
+
+	public Double getMaxMPH() {
 		return maxMPH;
 	}
-	private void setMaxMPH(Double maxMPH) {
+
+	public void setMaxMPH(Double maxMPH) {
 		this.maxMPH = maxMPH;
 	}
-	private Double getRange() {
+
+	public Double getRange() {
 		return range;
 	}
-	private void setRange(Double range) {
+
+	public void setRange(Double range) {
 		this.range = range;
 	}
-	private Double getPrice() {
+
+	public Double getPrice() {
 		return price;
 	}
-	private void setPrice(Double price) {
+
+	public void setPrice(Double price) {
 		this.price = price;
 	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(maxMPH, model, price, range);
 	}
-	public Jet(String model, Double maxMPH, Double range, Double price) {
-		super();
-		this.model = model;
-		this.maxMPH = maxMPH;
-		this.range = range;
-		this.price = price;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Jet other = (Jet) obj;
-		if (model == null) {
-			if (other.model != null)
-				return false;
-		return Objects.equals(maxMPH, other.maxMPH) && Objects.equals(model, other.model)
-				&& Objects.equals(price, other.price) && Objects.equals(range, other.range);
-		
-		}else if (!model.equals(other.model)) {
-					return false;
-			}
-		return false;
-		}
+
+
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (obj == null)
+//			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+//		Jet other = (Jet) obj;
+//		if (model == null) {
+//			if (other.model != null)
+//				return false;
+//			return Objects.equals(maxMPH, other.maxMPH) && Objects.equals(model, other.model)
+//					&& Objects.equals(price, other.price) && Objects.equals(range, other.range);
+//
+//		} else if (!model.equals(other.model)) {
+//			return false;
+//		}
+//		return false;
+//	}
+
 	@Override
 	public String toString() {
-		return "Jet [model=" + model + ", maxMPH=" + maxMPH + ", range=" + range + ", price=" + price + ", getModel()="
-				+ getModel() + ", getMaxMPH()=" + getMaxMPH() + ", getRange()=" + getRange() + ", getPrice()="
-				+ getPrice() + ", hashCode()=" + hashCode() + ", getSpeedinMach()=" + getSpeedinMach() + ", getClass()="
-				+ getClass() + ", toString()=" + super.toString() + "]";
+		return "Jet [type=" + type + ", model=" + model + ", maxMPH=" + maxMPH + ", range=" + range + ", price=" + price+ "]";
 	}
-	
-	public abstract void fly();{
-		System.out.println("Flying!");
-		System.out.println("I can fly for " + range / maxMPH + "hours");
-		}
+
+	public void fly() {
+		
+	}
+
 	public Double getSpeedinMach() {
-		Double mach = maxMPH/767.3;
+		Double mach = maxMPH / 767.3;
 		return mach;
-	}}
+	}
+}
